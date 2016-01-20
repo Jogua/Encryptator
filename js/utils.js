@@ -38,19 +38,17 @@ function noRepeated(s) {
  * @return {string} o - String 
  */
 function getDisplacementKey(s) {
-	var numbers = new Array(s.length);
 	var o = '';
 	var cont;
 	for (i in s){
-	    cont = 0;
+	    cont = 1;
 	    for (j in s){
 		if(s[j]<s[i]){
 		    cont++;
-		}else if(s[j]==s[i] && !numbers[j]){
+		}else if(s[j]==s[i] && j<i){
 		    cont++;
 		}
 	    }
-	    numbers[i]=cont;
 	    o += cont;
 	}
 	return o;
